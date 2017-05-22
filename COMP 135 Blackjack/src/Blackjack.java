@@ -90,4 +90,16 @@ public class Blackjack {
 		return num;
 	}
 	
+	public boolean playerWon() {
+		if (playerTotal > 21)
+			return true;
+		return false;
+	}
+	
+	public boolean compWon() {
+		if (compTotal > 21) 
+			return true;
+		return false;
+	}
+	
 }
