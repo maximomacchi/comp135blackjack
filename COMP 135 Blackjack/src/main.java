@@ -6,17 +6,32 @@ public class main {
 	private static final int QUEEN = 10;
 	private static final int KING = 10;
 	
-	public static void main(String[] args) {
-		int randomNumber;
-		int playerTotal = 0;
-		int compTotal = 0;
-		
-		
+	private int playerTotal = 0;
+	private int compTotal = 0;
+	
+	public void dealFirstCards() {
+		for (int i = 0; i < 2; i++) {
+			int num = generateRandNum();
+			switch (num) {
+			case 11:
+				playerTotal += JACK;
+				break;
+			case 12:
+				playerTotal += QUEEN;
+				break;
+			case 13:
+				playerTotal += KING;
+				break;
+			default:
+				playerTotal += num;
+				break;
+			}
+		}
 	}
 	
-	public static int generateRandNum() {
+	public int generateRandNum() {
 		Random rand = new Random();
-		int num = rand.nextInt(50) + 1;
+		int num = rand.nextInt(13) + 1;
 		return num;
 	}
 	
