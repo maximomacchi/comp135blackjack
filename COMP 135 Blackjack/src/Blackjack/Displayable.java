@@ -3,7 +3,6 @@ package Blackjack;
 
 import java.util.ArrayList;
 
-
 import acm.graphics.GObject;
 
 public interface Displayable {

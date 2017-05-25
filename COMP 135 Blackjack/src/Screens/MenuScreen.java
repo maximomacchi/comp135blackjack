@@ -26,7 +26,7 @@ public class MenuScreen extends GraphicsPane {
 	public MenuScreen(main app) {
 		program = app;
 		background = new GImage("files/Start Screen.png", 0, 0);
-		playButton = new GButton("Button", 435, 423, 111, 79, Color.BLUE);
+		playButton = new GButton(435, 423, 111, 79, false);
 	}
 	
 	@Override
@@ -42,24 +42,10 @@ public class MenuScreen extends GraphicsPane {
 	}
 	
 	@Override
-	public void keyPressed(KeyEvent e){
-		if(e.getKeyCode() == KeyEvent.VK_R){
-			GButton button = new GButton("mousePressed", 0, 0, 100, 100, Color.RED);
-			program.add(button);
-		}
-	}
-	
-	@Override
 	public void mousePressed(MouseEvent e) {
 		GObject obj = program.getElementAt(e.getX(), e.getY());
-		// GButton button = new GButton("mousePressed", 0, 0, 100, 100, Color.RED);
-		double x = e.getX();
-		double y = e.getY();
-		System.out.println("X = " + x);
-		System.out.println("Y = " + y);
 		if(obj == playButton) {
-			// program.add(button);
-			// program.switchToGame();
+			program.switchToGame();
 		}
 	}
 }

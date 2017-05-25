@@ -29,7 +29,6 @@ public class main extends GraphicsApplication {
 		requestFocus();
 		addKeyListeners();
 		addMouseListeners();
-		System.out.println("setupInteractions(); complete");
 	}
 	
 	public void switchToMenu() {
