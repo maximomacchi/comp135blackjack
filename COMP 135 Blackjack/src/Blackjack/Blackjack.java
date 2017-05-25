@@ -27,6 +27,7 @@ public class Blackjack {
 				playerTotal += num;
 				break;
 			}
+			return;
 		}
 		
 		// Deal computer cards
@@ -46,10 +47,14 @@ public class Blackjack {
 				compTotal += num;
 				break;
 			}
+			return;
 		}
 	}
 	
 	public void dealPlayerCard() {
+		if (playerTotal > 17) {
+			return;
+		}
 		int num = generateRandNum();
 		switch (num) {
 		case 11:
@@ -65,9 +70,13 @@ public class Blackjack {
 			playerTotal += num;
 			break;
 		}
+		return;
 	}
 	
 	public void dealCompCard() {
+		if (compTotal > 17) {
+			return;
+		}
 		int num = generateRandNum();
 		switch (num) {
 		case 11:
@@ -83,6 +92,7 @@ public class Blackjack {
 			compTotal += num;
 			break;
 		}
+		return;
 	}
 	
 	public int generateRandNum() {
