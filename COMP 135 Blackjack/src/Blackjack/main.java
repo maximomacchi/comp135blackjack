@@ -13,6 +13,7 @@ public class main extends GraphicsApplication {
 	private GraphicsPane gameScreen;
 	private GraphicsPane menuScreen;
 	private GraphicsPane victoryScreen;
+	private Blackjack blackjack;
 	
 	public void init() {
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -46,4 +47,9 @@ public class main extends GraphicsApplication {
 	public void switchToDefeat() {
 		switchToScreen(defeatScreen);
 	}
+	
+	public Blackjack getBlackjack() {
+		return blackjack;
+	}
+
 }

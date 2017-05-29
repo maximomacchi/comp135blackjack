@@ -96,21 +96,32 @@ public class Blackjack {
 	}
 	
 	public int generateRandNum() {
+		// Generates random number between 1 - 13
 		Random rand = new Random();
 		int num = rand.nextInt(13) + 1;
 		return num;
 	}
 	
 	public boolean playerWon() {
+		// If player has won, return true
 		if (playerTotal > 21)
-			return true;
-		return false;
+			return false;
+		return true;
 	}
 	
 	public boolean compWon() {
+		// If computer has won, return true
 		if (compTotal > 21) 
-			return true;
-		return false;
+			return false;
+		return true;
+	}
+	
+	public int getPlayerTotal() {
+		return playerTotal;
+	}
+	
+	public int getCompTotal() {
+		return compTotal;
 	}
 	
 }
