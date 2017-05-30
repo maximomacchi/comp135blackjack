@@ -23,6 +23,8 @@ public class main extends GraphicsApplication {
 	public void run() {
 		menuScreen = new MenuScreen(this);
 		gameScreen = new GameScreen(this);
+		victoryScreen = new VictoryScreen(this);
+		defeatScreen = new DefeatScreen(this);
 		setupInteractions();
 		switchToMenu();
 	}

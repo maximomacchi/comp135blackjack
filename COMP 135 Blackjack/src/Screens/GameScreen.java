@@ -15,11 +15,16 @@ public class GameScreen extends GraphicsPane {
 	private GLabel playerScore;
 	private GLabel compScore;
 	private GButton hitButton;
+	private GButton standButton;
 	
 	private static final double HIT_X = 32;
 	private static final double HIT_Y = 489;
 	private static final double HIT_SIZE_WIDTH = 106;
 	private static final double HIT_SIZE_HEIGHT = 72;
+	private static final double STAND_X = 814;
+	private static final double STAND_Y = 483;
+	private static final double STAND_SIZE_WIDTH = 105;
+	private static final double STAND_SIZE_HEIGHT = 81;
 	private static final double PLAYERSCORE_X = 469;
 	private static final double PLAYERSCORE_Y = 417;
 	private static final double COMPSCORE_X = 469;
@@ -29,6 +34,7 @@ public class GameScreen extends GraphicsPane {
 		program = app;
 		background = new GImage("files/Card Dealt.png", 0, 0);
 		hitButton = new GButton(HIT_X, HIT_Y, HIT_SIZE_WIDTH, HIT_SIZE_HEIGHT, false);
+		standButton = new GButton(STAND_X, STAND_Y, STAND_SIZE_WIDTH, STAND_SIZE_HEIGHT, false);
 		playerScore = new GLabel(Integer.toString(0), PLAYERSCORE_X, PLAYERSCORE_Y);
 		playerScore.setFont("Arial-30");
 		compScore = new GLabel(Integer.toString(0), COMPSCORE_X, COMPSCORE_Y);
@@ -39,6 +45,7 @@ public class GameScreen extends GraphicsPane {
 	public void showContents() {
 		program.add(background);
 		program.add(hitButton);
+		program.add(standButton);
 		program.add(playerScore);
 		program.add(compScore);
 	}
@@ -47,6 +54,7 @@ public class GameScreen extends GraphicsPane {
 	public void hideContents() {
 		program.remove(background);
 		program.remove(hitButton);
+		program.remove(standButton);
 		program.remove(playerScore);
 		program.remove(compScore);
 	}
@@ -61,6 +69,7 @@ public class GameScreen extends GraphicsPane {
 			}
 			else {
 				program.switchToDefeat();
+				return;
 			}
 			program.getBlackjack().dealCompCard();
 			if (program.getBlackjack().compWon()) {
@@ -68,6 +77,28 @@ public class GameScreen extends GraphicsPane {
 			}
 			else {
 				program.switchToVictory();
+				return;
+			}
+		}
+		
+		if(obj == standButton) {
+			while (true) {
+				int rand = program.getBlackjack().generateRandNum(1, 2);
+				if (rand == 1) {
+					program.getBlackjack().dealCompCard();
+				}
+				else {
+					break;
+				}
+			}
+			if (!(program.getBlackjack().compWon())) {
+				program.switchToVictory();
+			}
+			if (program.getBlackjack().getPlayerTotal() > program.getBlackjack().getCompTotal()) {
+				program.switchToVictory();
+			}
+			else {
+				program.switchToDefeat();
 			}
 		}
 	}

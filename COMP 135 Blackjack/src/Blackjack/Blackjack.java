@@ -17,7 +17,7 @@ public class Blackjack {
 	public void dealFirstCards() {
 		// Deal player cards
 		for (int i = 0; i < 2; i++) {
-			int num = generateRandNum();
+			int num = generateRandNum(1, 13);
 			switch (num) {
 			case 11:
 				playerTotal += JACK;
@@ -37,7 +37,7 @@ public class Blackjack {
 		
 		// Deal computer cards
 		for (int i = 0; i < 2; i++) {
-			int num = generateRandNum();
+			int num = generateRandNum(1, 13);
 			switch (num) {
 			case 11:
 				compTotal += JACK;
@@ -57,10 +57,7 @@ public class Blackjack {
 	}
 	
 	public void dealPlayerCard() {
-		if (playerTotal > 17) {
-			return;
-		}
-		int num = generateRandNum();
+		int num = generateRandNum(1, 13);
 		switch (num) {
 		case 11:
 			playerTotal += JACK;
@@ -79,10 +76,7 @@ public class Blackjack {
 	}
 	
 	public void dealCompCard() {
-		if (compTotal > 17) {
-			return;
-		}
-		int num = generateRandNum();
+		int num = generateRandNum(1, 13);
 		switch (num) {
 		case 11:
 			compTotal += JACK;
@@ -100,10 +94,10 @@ public class Blackjack {
 		return;
 	}
 	
-	public int generateRandNum() {
-		// Generates random number between 1 - 13
+	public int generateRandNum(int min, int max) {
+		// Generates random number between min and max
 		Random rand = new Random();
-		int num = rand.nextInt(13) + 1;
+		int num = rand.nextInt(max) + min;
 		return num;
 	}
 	
