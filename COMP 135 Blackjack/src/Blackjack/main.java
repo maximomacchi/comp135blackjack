@@ -17,6 +17,7 @@ public class main extends GraphicsApplication {
 	
 	public void init() {
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+		blackjack = new Blackjack();
 	}
 	
 	public void run() {

@@ -6,8 +6,13 @@ public class Blackjack {
 	private static final int QUEEN = 10;
 	private static final int KING = 10;
 	
-	private int playerTotal = 0;
-	private int compTotal = 0;
+	private int playerTotal;
+	private int compTotal;
+	
+	public Blackjack() {
+		playerTotal = 0;
+		compTotal = 0;
+	}
 	
 	public void dealFirstCards() {
 		// Deal player cards
