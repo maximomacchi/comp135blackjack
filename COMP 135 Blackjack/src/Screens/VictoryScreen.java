@@ -32,4 +32,12 @@ public class VictoryScreen extends GraphicsPane {
 		program.add(compScore);
 	}
 	
+	public int getPlayerTotal() {
+		return program.getBlackjack().getPlayerTotal();
+	}
+	
+	public int getCompTotal() {
+		return program.getBlackjack().getCompTotal();
+	}
+	
 }

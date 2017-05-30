@@ -32,7 +32,6 @@ public class Blackjack {
 				playerTotal += num;
 				break;
 			}
-			return;
 		}
 		
 		// Deal computer cards
@@ -119,8 +118,16 @@ public class Blackjack {
 		return playerTotal;
 	}
 	
+	public void setPlayerTotal(int value) {
+		playerTotal = value;
+	}
+	
 	public int getCompTotal() {
 		return compTotal;
+	}
+	
+	public void setCompTotal(int value) {
+		compTotal = value;
 	}
 	
 }

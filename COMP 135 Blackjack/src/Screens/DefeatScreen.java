@@ -31,5 +31,13 @@ public class DefeatScreen extends GraphicsPane {
 		program.remove(playerScore);
 		program.remove(compScore);
 	}
+	
+	public int getPlayerTotal() {
+		return program.getBlackjack().getPlayerTotal();
+	}
+	
+	public int getCompTotal() {
+		return program.getBlackjack().getCompTotal();
+	}
 
 }

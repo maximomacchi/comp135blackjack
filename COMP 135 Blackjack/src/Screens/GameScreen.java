@@ -32,12 +32,13 @@ public class GameScreen extends GraphicsPane {
 	
 	public GameScreen(main app) {
 		program = app;
+		program.getBlackjack().dealFirstCards();
 		background = new GImage("files/Card Dealt.png", 0, 0);
 		hitButton = new GButton(HIT_X, HIT_Y, HIT_SIZE_WIDTH, HIT_SIZE_HEIGHT, false);
 		standButton = new GButton(STAND_X, STAND_Y, STAND_SIZE_WIDTH, STAND_SIZE_HEIGHT, false);
-		playerScore = new GLabel(Integer.toString(0), PLAYERSCORE_X, PLAYERSCORE_Y);
+		playerScore = new GLabel(Integer.toString(program.getBlackjack().getPlayerTotal()), PLAYERSCORE_X, PLAYERSCORE_Y);
 		playerScore.setFont("Arial-30");
-		compScore = new GLabel(Integer.toString(0), COMPSCORE_X, COMPSCORE_Y);
+		compScore = new GLabel(Integer.toString(program.getBlackjack().getCompTotal()), COMPSCORE_X, COMPSCORE_Y);
 		compScore.setFont("Arial-30");
 	}
 	
@@ -107,5 +108,13 @@ public class GameScreen extends GraphicsPane {
 		program.remove(label);
 		label.setLabel(Integer.toString(newValue));
 		program.add(label);
+	}
+	
+	public int getPlayerTotal() {
+		return program.getBlackjack().getPlayerTotal();
+	}
+	
+	public int getCompTotal() {
+		return program.getBlackjack().getCompTotal();
 	}
 }
