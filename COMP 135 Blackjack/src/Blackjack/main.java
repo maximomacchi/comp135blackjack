@@ -2,6 +2,7 @@ package Blackjack;
 
 import Screens.DefeatScreen;
 import Screens.GameScreen;
+import Screens.Instructions;
 import Screens.MenuScreen;
 import Screens.VictoryScreen;
 
@@ -13,7 +14,10 @@ public class main extends GraphicsApplication {
 	private GraphicsPane gameScreen;
 	private GraphicsPane menuScreen;
 	private GraphicsPane victoryScreen;
+	private GraphicsPane instructionsScreen;
 	private Blackjack blackjack;
+	private int playerScore;
+	private int compScore;
 	
 	public void init() {
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -25,6 +29,7 @@ public class main extends GraphicsApplication {
 		gameScreen = new GameScreen(this);
 		victoryScreen = new VictoryScreen(this);
 		defeatScreen = new DefeatScreen(this);
+		instructionsScreen = new Instructions(this);
 		setupInteractions();
 		switchToMenu();
 	}
@@ -39,6 +44,10 @@ public class main extends GraphicsApplication {
 		switchToScreen(menuScreen);
 	}
 	
+	public void switchToInstructions() {
+		switchToScreen(instructionsScreen);
+	}
+	
 	public void switchToGame() {
 		switchToScreen(gameScreen);
 	}
@@ -48,7 +57,6 @@ public class main extends GraphicsApplication {
 	}
 	
 	public void switchToDefeat() {
-		victoryScreen.getProgram().getBlackjack().setPlayerTotal(gameScreen.getProgram().getBlackjack().getPlayerTotal());
 		switchToScreen(defeatScreen);
 	}
 	

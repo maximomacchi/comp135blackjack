@@ -17,13 +17,13 @@ public class GameScreen extends GraphicsPane {
 	private GButton hitButton;
 	private GButton standButton;
 	
-	private static final double HIT_X = 32;
-	private static final double HIT_Y = 489;
-	private static final double HIT_SIZE_WIDTH = 106;
-	private static final double HIT_SIZE_HEIGHT = 72;
-	private static final double STAND_X = 814;
-	private static final double STAND_Y = 483;
-	private static final double STAND_SIZE_WIDTH = 105;
+	private static final double HIT_X = 41;
+	private static final double HIT_Y = 506;
+	private static final double HIT_SIZE_WIDTH = 110;
+	private static final double HIT_SIZE_HEIGHT = 76;
+	private static final double STAND_X = 845;
+	private static final double STAND_Y = 506;
+	private static final double STAND_SIZE_WIDTH = 118;
 	private static final double STAND_SIZE_HEIGHT = 81;
 	private static final double PLAYERSCORE_X = 469;
 	private static final double PLAYERSCORE_Y = 417;
