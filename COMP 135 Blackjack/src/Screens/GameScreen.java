@@ -89,10 +89,13 @@ public class GameScreen extends GraphicsPane {
 			while (program.getBlackjack().getCompTotal() < 16) {
 				program.getBlackjack().dealCompCard();
 			}
-			if (!(program.getBlackjack().compWon()) && (program.getBlackjack().playerWon())) {
+			if ((program.getBlackjack().getCompTotal() > 21) && (program.getBlackjack().getPlayerTotal() < 21)) {
 				program.switchToVictory();
 			}
-			if ((program.getBlackjack().getPlayerTotal() > program.getBlackjack().getCompTotal()) && program.getBlackjack().getPlayerTotal() <= 21) {
+			else if ((program.getBlackjack().getPlayerTotal() > program.getBlackjack().getCompTotal()) && program.getBlackjack().getPlayerTotal() <= 21) {
+				program.switchToVictory();
+			}
+			else if ((program.getBlackjack().getPlayerTotal() == program.getBlackjack().getCompTotal()) && program.getBlackjack().getPlayerTotal() <= 21) {
 				program.switchToVictory();
 			}
 			else {
