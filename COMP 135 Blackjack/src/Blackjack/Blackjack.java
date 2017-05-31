@@ -76,6 +76,9 @@ public class Blackjack {
 	
 	public void dealCompCard() {
 		int num = generateRandNum(1, 13);
+		if (compTotal > 16) {
+			return;
+		}
 		switch (num) {
 		case 11:
 			compTotal += JACK;
@@ -101,14 +104,14 @@ public class Blackjack {
 	}
 	
 	public boolean playerWon() {
-		// If player has won, return true
+		// If player sum is less than 21, return true
 		if (playerTotal > 21)
 			return false;
 		return true;
 	}
 	
 	public boolean compWon() {
-		// If computer has won, return true
+		// If computer sum is less than 21, return true
 		if (compTotal > 21) 
 			return false;
 		return true;
