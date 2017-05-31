@@ -16,17 +16,23 @@ public class DefeatScreen extends GraphicsPane {
 	private GLabel playerScore;
 	private GLabel compScore;
 	private GButton exitButton;
+	private GButton playAgainButton;
 	
 	private static final double EXIT_X = 524;
 	private static final double EXIT_Y = 405;
 	private static final double EXIT_HEIGHT = 102;
 	private static final double EXIT_WIDTH = 186;
+	private static final double PLAY_AGAIN_X = 305;
+	private static final double PLAY_AGAIN_Y = 402;
+	private static final double PLAY_AGAIN_HEIGHT = 98;
+	private static final double PLAY_AGAIN_WIDTH = 182;
 	
 	public DefeatScreen(main app) {
 		program = app;
 		background = new GImage("files/Defeat.png", 0, 0);
 		exitButton = new GButton(EXIT_X, EXIT_Y, EXIT_WIDTH, EXIT_HEIGHT, false);
-	}
+		playAgainButton = new GButton(PLAY_AGAIN_X, PLAY_AGAIN_Y, PLAY_AGAIN_WIDTH, PLAY_AGAIN_HEIGHT, false);
+	};
 	
 	@Override
 	public void showContents() {
@@ -42,6 +48,7 @@ public class DefeatScreen extends GraphicsPane {
 		program.add(playerScore);
 		program.add(compScore);
 		program.add(exitButton);
+		program.add(playAgainButton);
 	}
 
 	@Override
@@ -50,6 +57,7 @@ public class DefeatScreen extends GraphicsPane {
 		program.remove(playerScore);
 		program.remove(compScore);
 		program.remove(exitButton);
+		program.remove(playAgainButton);
 	}
 	
 	@Override
@@ -57,6 +65,9 @@ public class DefeatScreen extends GraphicsPane {
 		GObject obj = program.getElementAt(e.getX(), e.getY());
 		if (obj == exitButton) {
 			System.exit(1);
+		}
+		if (obj == playAgainButton) {
+			program.switchToGame();
 		}
 	}
 	

@@ -32,7 +32,6 @@ public class GameScreen extends GraphicsPane {
 	
 	public GameScreen(main app) {
 		program = app;
-		program.getBlackjack().dealFirstCards();
 		background = new GImage("files/Card Dealt.png", 0, 0);
 		hitButton = new GButton(HIT_X, HIT_Y, HIT_SIZE_WIDTH, HIT_SIZE_HEIGHT, false);
 		standButton = new GButton(STAND_X, STAND_Y, STAND_SIZE_WIDTH, STAND_SIZE_HEIGHT, false);
@@ -44,6 +43,7 @@ public class GameScreen extends GraphicsPane {
 	
 	@Override
 	public void showContents() {
+		dealInitialCards();
 		program.add(background);
 		program.add(hitButton);
 		program.add(standButton);
@@ -108,6 +108,14 @@ public class GameScreen extends GraphicsPane {
 		program.remove(label);
 		label.setLabel(Integer.toString(newValue));
 		program.add(label);
+	}
+	
+	public void dealInitialCards() {
+		program.getBlackjack().setPlayerTotal(0);
+		program.getBlackjack().setCompTotal(0);
+		program.getBlackjack().dealFirstCards();
+		playerScore.setLabel(Integer.toString(program.getBlackjack().getPlayerTotal()));
+		compScore.setLabel(Integer.toString(program.getBlackjack().getCompTotal()));
 	}
 	
 	public int getPlayerTotal() {
