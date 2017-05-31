@@ -50,4 +50,10 @@ public class MenuScreen extends GraphicsPane {
 			program.switchToGame();
 		}
 	}
+
+	@Override
+	public main getProgram() {
+		// TODO Auto-generated method stub
+		return program;
+	}
 }

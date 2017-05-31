@@ -16,4 +16,5 @@ public interface Interfaceable extends Displayable {
 	public void keyPressed(KeyEvent e);
 	public void keyReleased(KeyEvent e);
 	public void keyTyped(KeyEvent e);
+	public main getProgram();
 }

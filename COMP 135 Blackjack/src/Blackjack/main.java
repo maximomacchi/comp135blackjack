@@ -48,11 +48,28 @@ public class main extends GraphicsApplication {
 	}
 	
 	public void switchToDefeat() {
+		victoryScreen.getProgram().getBlackjack().setPlayerTotal(gameScreen.getProgram().getBlackjack().getPlayerTotal());
 		switchToScreen(defeatScreen);
 	}
 	
 	public Blackjack getBlackjack() {
 		return blackjack;
+	}
+	
+	public GraphicsPane getMenuScreen() {
+		return menuScreen;
+	}
+	
+	public GraphicsPane getGameScreen() {
+		return gameScreen;
+	}
+	
+	public GraphicsPane getVictoryScreen() {
+		return victoryScreen;
+	}
+	
+	public GraphicsPane getDefeatScreen() {
+		return defeatScreen;
 	}
 
 }

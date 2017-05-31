@@ -86,6 +86,9 @@ public class GameScreen extends GraphicsPane {
 			while (program.getBlackjack().getPlayerTotal() < 16) {
 				program.getBlackjack().dealPlayerCard();
 			}
+			while (program.getBlackjack().getCompTotal() < 16) {
+				program.getBlackjack().dealCompCard();
+			}
 			if (!(program.getBlackjack().compWon()) && (program.getBlackjack().playerWon())) {
 				program.switchToVictory();
 			}
@@ -110,5 +113,11 @@ public class GameScreen extends GraphicsPane {
 	
 	public int getCompTotal() {
 		return program.getBlackjack().getCompTotal();
+	}
+
+	@Override
+	public main getProgram() {
+		// TODO Auto-generated method stub
+		return program;
 	}
 }

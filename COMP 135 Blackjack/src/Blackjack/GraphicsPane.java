@@ -16,6 +16,9 @@ public abstract class GraphicsPane implements Interfaceable {
 
 	@Override
 	public abstract void hideContents();
+	
+	@Override
+	public abstract main getProgram();
 
 	@Override
 	public void mousePressed(MouseEvent e) {
@@ -66,5 +69,5 @@ public abstract class GraphicsPane implements Interfaceable {
 	public void run() {
 		
 	}
-
+	
 }
