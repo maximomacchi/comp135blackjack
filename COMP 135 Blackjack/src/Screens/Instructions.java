@@ -21,7 +21,7 @@ public class Instructions extends GraphicsPane {
 	public Instructions (main app) {
 		program = app;
 		background = new GImage("files/Instructions.png", 0, 0);
-		playButton = new GButton(PLAY_X, PLAY_Y, PLAY_SIZE_WIDTH, PLAY_SIZE_HEIGHT, true);
+		playButton = new GButton(PLAY_X, PLAY_Y, PLAY_SIZE_WIDTH, PLAY_SIZE_HEIGHT, false);
 	}
 	
 	@Override
