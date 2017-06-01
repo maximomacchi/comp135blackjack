@@ -28,7 +28,7 @@ public class GameScreen extends GraphicsPane {
 	private static final double STAND_Y = 506;
 	private static final double STAND_SIZE_WIDTH = 118;
 	private static final double STAND_SIZE_HEIGHT = 81;
-	private static final double PLAYERSCORE_X = 469;
+	private static final double PLAYERSCORE_X = 473;
 	private static final double PLAYERSCORE_Y = 417;
 	private static final double COMPSCORE_X = 469;
 	private static final double COMPSCORE_Y = 165;
@@ -43,7 +43,7 @@ public class GameScreen extends GraphicsPane {
 		hitButton = new GButton(HIT_X, HIT_Y, HIT_SIZE_WIDTH, HIT_SIZE_HEIGHT, false);
 		standButton = new GButton(STAND_X, STAND_Y, STAND_SIZE_WIDTH, STAND_SIZE_HEIGHT, false);
 		playerScore = new GLabel(Integer.toString(program.getBlackjack().getPlayerTotal()), PLAYERSCORE_X, PLAYERSCORE_Y);
-		playerScore.setFont("Arial-30");
+		playerScore.setFont("Arial-50");
 		// compScore = new GLabel(Integer.toString(program.getBlackjack().getCompTotal()), COMPSCORE_X, COMPSCORE_Y);
 		// compScore.setFont("Arial-30");
 		compTotalScore = new GLabel(Integer.toString(program.getCompScore()), COMP_TOTAL_SCORE_X, COMP_TOTAL_SCORE_Y);
