@@ -128,7 +128,6 @@ public class GameScreen extends GraphicsPane {
 
 	@Override
 	public main getProgram() {
-		// TODO Auto-generated method stub
 		return program;
 	}
 }

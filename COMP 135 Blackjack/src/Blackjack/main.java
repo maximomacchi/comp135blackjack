@@ -16,8 +16,8 @@ public class main extends GraphicsApplication {
 	private GraphicsPane victoryScreen;
 	private GraphicsPane instructionsScreen;
 	private Blackjack blackjack;
-	private int playerScore;
-	private int compScore;
+	private int playerScore = 0;
+	private int compScore = 0;
 	
 	public void init() {
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -78,6 +78,22 @@ public class main extends GraphicsApplication {
 	
 	public GraphicsPane getDefeatScreen() {
 		return defeatScreen;
+	}
+	
+	public int getPlayerScore() {
+		return playerScore;
+	}
+	
+	public int getCompScore() {
+		return compScore;
+	}
+	
+	public void incrementPlayerScore() {
+		playerScore++;
+	}
+	
+	public void incrementCompScore() {
+		compScore++;
 	}
 
 }

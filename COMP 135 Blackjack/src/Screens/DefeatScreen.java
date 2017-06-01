@@ -38,8 +38,8 @@ public class DefeatScreen extends GraphicsPane {
 	public void showContents() {
 		program.getBlackjack().setPlayerTotal(program.getGameScreen().getProgram().getBlackjack().getPlayerTotal());
 		program.getBlackjack().setCompTotal(program.getGameScreen().getProgram().getBlackjack().getCompTotal());
-		playerScore = new GLabel(Integer.toString(program.getBlackjack().getPlayerTotal()), 300, 200);
-		compScore = new GLabel(Integer.toString(program.getBlackjack().getCompTotal()), 500, 200);
+		playerScore = new GLabel("Player Sum:" + Integer.toString(program.getBlackjack().getPlayerTotal()), 300, 225);
+		compScore = new GLabel("Dealer Sum:" + Integer.toString(program.getBlackjack().getCompTotal()), 550, 225);
 		playerScore.setFont("Arial-30");
 		playerScore.setColor(Color.white);
 		compScore.setFont("Arial-30");
