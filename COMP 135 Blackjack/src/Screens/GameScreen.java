@@ -65,7 +65,11 @@ public class GameScreen extends GraphicsPane {
 		GObject obj = program.getElementAt(e.getX(), e.getY());
 		if(obj == hitButton) {
 			program.getBlackjack().dealPlayerCard();
-			if (program.getBlackjack().playerWon()) {
+			if (program.getBlackjack().getPlayerTotal() == 21) {
+				program.switchToVictory();
+				return;
+			}
+			else if (program.getBlackjack().playerWon()) {
 				updateLabel(program.getBlackjack().getPlayerTotal(), playerScore);
 			}
 			else {
