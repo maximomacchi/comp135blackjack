@@ -14,7 +14,7 @@ public class GameScreen extends GraphicsPane {
 	private main program;
 	private GImage background;
 	private GLabel playerScore;
-	private GLabel compScore;
+	// private GLabel compScore;
 	private GButton hitButton;
 	private GButton standButton;
 	private GLabel compTotalScore;
@@ -44,8 +44,8 @@ public class GameScreen extends GraphicsPane {
 		standButton = new GButton(STAND_X, STAND_Y, STAND_SIZE_WIDTH, STAND_SIZE_HEIGHT, false);
 		playerScore = new GLabel(Integer.toString(program.getBlackjack().getPlayerTotal()), PLAYERSCORE_X, PLAYERSCORE_Y);
 		playerScore.setFont("Arial-30");
-		compScore = new GLabel(Integer.toString(program.getBlackjack().getCompTotal()), COMPSCORE_X, COMPSCORE_Y);
-		compScore.setFont("Arial-30");
+		// compScore = new GLabel(Integer.toString(program.getBlackjack().getCompTotal()), COMPSCORE_X, COMPSCORE_Y);
+		// compScore.setFont("Arial-30");
 		compTotalScore = new GLabel(Integer.toString(program.getCompScore()), COMP_TOTAL_SCORE_X, COMP_TOTAL_SCORE_Y);
 		compTotalScore.setFont("Arial-30");
 		compTotalScore.setColor(Color.white);
@@ -63,7 +63,7 @@ public class GameScreen extends GraphicsPane {
 		program.add(hitButton);
 		program.add(standButton);
 		program.add(playerScore);
-		program.add(compScore);
+		// program.add(compScore);
 		program.add(compTotalScore);
 		program.add(playerTotalScore);
 	}
@@ -74,7 +74,7 @@ public class GameScreen extends GraphicsPane {
 		program.remove(hitButton);
 		program.remove(standButton);
 		program.remove(playerScore);
-		program.remove(compScore);
+		// program.remove(compScore);
 		program.remove(compTotalScore);
 		program.remove(playerTotalScore);
 	}
@@ -97,7 +97,7 @@ public class GameScreen extends GraphicsPane {
 			}
 			program.getBlackjack().dealCompCard();
 			if (program.getBlackjack().compWon()) {
-				updateLabel(program.getBlackjack().getCompTotal(), compScore);
+			//	updateLabel(program.getBlackjack().getCompTotal(), compScore);
 			}
 			else {
 				program.switchToVictory();
@@ -138,7 +138,7 @@ public class GameScreen extends GraphicsPane {
 		program.getBlackjack().setCompTotal(0);
 		program.getBlackjack().dealFirstCards();
 		playerScore.setLabel(Integer.toString(program.getBlackjack().getPlayerTotal()));
-		compScore.setLabel(Integer.toString(program.getBlackjack().getCompTotal()));
+		// compScore.setLabel(Integer.toString(program.getBlackjack().getCompTotal()));
 	}
 	
 	public int getPlayerTotal() {
