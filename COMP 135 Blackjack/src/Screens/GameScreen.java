@@ -108,10 +108,10 @@ public class GameScreen extends GraphicsPane {
 		}
 		
 		if(obj == standButton) {
-			while (program.getBlackjack().getPlayerTotal() < 16) {
+			while (program.getBlackjack().getPlayerTotal() < 17) {
 				program.getBlackjack().dealPlayerCard();
 			}
-			while (program.getBlackjack().getCompTotal() < 16) {
+			while (program.getBlackjack().getCompTotal() < 17) {
 				program.getBlackjack().dealCompCard();
 			}
 			if ((program.getBlackjack().getCompTotal() > 21) && (program.getBlackjack().getPlayerTotal() < 21)) {
