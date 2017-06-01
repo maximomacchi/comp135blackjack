@@ -1,5 +1,6 @@
 package Screens;
 
+import java.awt.Color;
 import java.awt.event.MouseEvent;
 
 import Blackjack.GButton;
@@ -16,6 +17,8 @@ public class GameScreen extends GraphicsPane {
 	private GLabel compScore;
 	private GButton hitButton;
 	private GButton standButton;
+	private GLabel compTotalScore;
+	private GLabel playerTotalScore;
 	
 	private static final double HIT_X = 41;
 	private static final double HIT_Y = 506;
@@ -29,6 +32,10 @@ public class GameScreen extends GraphicsPane {
 	private static final double PLAYERSCORE_Y = 417;
 	private static final double COMPSCORE_X = 469;
 	private static final double COMPSCORE_Y = 165;
+	private static final double COMP_TOTAL_SCORE_X = 939;
+	private static final double COMP_TOTAL_SCORE_Y = 94;
+	private static final double PLAYER_TOTAL_SCORE_X = 900;
+	private static final double PLAYER_TOTAL_SCORE_Y = 148;
 	
 	public GameScreen(main app) {
 		program = app;
@@ -39,16 +46,26 @@ public class GameScreen extends GraphicsPane {
 		playerScore.setFont("Arial-30");
 		compScore = new GLabel(Integer.toString(program.getBlackjack().getCompTotal()), COMPSCORE_X, COMPSCORE_Y);
 		compScore.setFont("Arial-30");
+		compTotalScore = new GLabel(Integer.toString(program.getCompScore()), COMP_TOTAL_SCORE_X, COMP_TOTAL_SCORE_Y);
+		compTotalScore.setFont("Arial-30");
+		compTotalScore.setColor(Color.white);
+		playerTotalScore = new GLabel(Integer.toString(program.getPlayerScore()), PLAYER_TOTAL_SCORE_X, PLAYER_TOTAL_SCORE_Y);
+		playerTotalScore.setFont("Arial-30");
+		playerTotalScore.setColor(Color.white);
 	}
 	
 	@Override
 	public void showContents() {
+		compTotalScore.setLabel(Integer.toString(program.getCompScore()));
+		playerTotalScore.setLabel(Integer.toString(program.getPlayerScore()));
 		dealInitialCards();
 		program.add(background);
 		program.add(hitButton);
 		program.add(standButton);
 		program.add(playerScore);
 		program.add(compScore);
+		program.add(compTotalScore);
+		program.add(playerTotalScore);
 	}
 	
 	@Override
@@ -58,6 +75,8 @@ public class GameScreen extends GraphicsPane {
 		program.remove(standButton);
 		program.remove(playerScore);
 		program.remove(compScore);
+		program.remove(compTotalScore);
+		program.remove(playerTotalScore);
 	}
 	
 	@Override

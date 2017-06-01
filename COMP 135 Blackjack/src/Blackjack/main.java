@@ -53,10 +53,12 @@ public class main extends GraphicsApplication {
 	}
 	
 	public void switchToVictory() {
+		incrementPlayerScore();
 		switchToScreen(victoryScreen);
 	}
 	
 	public void switchToDefeat() {
+		incrementCompScore();
 		switchToScreen(defeatScreen);
 	}
 	
@@ -86,6 +88,14 @@ public class main extends GraphicsApplication {
 	
 	public int getCompScore() {
 		return compScore;
+	}
+	
+	public void setPlayerScore(int value) {
+		playerScore = value;
+	}
+	
+	public void setCompScore(int value) {
+		compScore = value;
 	}
 	
 	public void incrementPlayerScore() {

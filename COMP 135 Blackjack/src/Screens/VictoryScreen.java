@@ -15,6 +15,8 @@ public class VictoryScreen extends GraphicsPane {
 	private GImage background;
 	private GLabel playerScore;
 	private GLabel compScore;
+	private GLabel compTotalScore;
+	private GLabel playerTotalScore;
 	private GButton exitButton;
 	private GButton playAgainButton;
 	
@@ -26,6 +28,10 @@ public class VictoryScreen extends GraphicsPane {
 	private static final double PLAY_AGAIN_Y = 422;
 	private static final double PLAY_AGAIN_HEIGHT = 107;
 	private static final double PLAY_AGAIN_WIDTH = 185;
+	private static final double COMP_TOTAL_SCORE_X = 940;
+	private static final double COMP_TOTAL_SCORE_Y = 107;
+	private static final double PLAYER_TOTAL_SCORE_X = 900;
+	private static final double PLAYER_TOTAL_SCORE_Y = 158;
 	
 	public VictoryScreen(main app) {
 		program = app;
@@ -40,13 +46,21 @@ public class VictoryScreen extends GraphicsPane {
 		program.getBlackjack().setCompTotal(program.getGameScreen().getProgram().getBlackjack().getCompTotal());
 		playerScore = new GLabel("Player Sum: " + Integer.toString(program.getBlackjack().getPlayerTotal()), 300, 225);
 		compScore = new GLabel("Dealer Sum: " + Integer.toString(program.getBlackjack().getCompTotal()), 550, 225);
+		compTotalScore = new GLabel(Integer.toString(program.getGameScreen().getProgram().getCompScore()), COMP_TOTAL_SCORE_X, COMP_TOTAL_SCORE_Y);
+		playerTotalScore = new GLabel(Integer.toString(program.getGameScreen().getProgram().getPlayerScore()), PLAYER_TOTAL_SCORE_X, PLAYER_TOTAL_SCORE_Y);
 		playerScore.setFont("Arial-30");
 		playerScore.setColor(Color.white);
 		compScore.setFont("Arial-30");
 		compScore.setColor(Color.white);
+		compTotalScore.setFont("Arial-30");
+		compTotalScore.setColor(Color.white);
+		playerTotalScore.setFont("Arial-30");
+		playerTotalScore.setColor(Color.white);
 		program.add(background);
 		program.add(playerScore);
 		program.add(compScore);
+		program.add(compTotalScore);
+		program.add(playerTotalScore);
 		program.add(exitButton);
 		program.add(playAgainButton);
 	}
@@ -56,6 +70,8 @@ public class VictoryScreen extends GraphicsPane {
 		program.remove(background);
 		program.remove(playerScore);
 		program.remove(compScore);
+		program.remove(compTotalScore);
+		program.remove(playerTotalScore);
 		program.remove(exitButton);
 		program.remove(playAgainButton);
 	}
