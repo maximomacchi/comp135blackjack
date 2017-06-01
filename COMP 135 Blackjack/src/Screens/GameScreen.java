@@ -56,9 +56,9 @@ public class GameScreen extends GraphicsPane {
 	
 	@Override
 	public void showContents() {
+		dealInitialCards();
 		compTotalScore.setLabel(Integer.toString(program.getCompScore()));
 		playerTotalScore.setLabel(Integer.toString(program.getPlayerScore()));
-		dealInitialCards();
 		program.add(background);
 		program.add(hitButton);
 		program.add(standButton);
@@ -84,6 +84,8 @@ public class GameScreen extends GraphicsPane {
 		GObject obj = program.getElementAt(e.getX(), e.getY());
 		if(obj == hitButton) {
 			program.getBlackjack().dealPlayerCard();
+			program.getBlackjack().dealCompCard();
+			// updateLabel(program.getBlackjack().getCompTotal(), compScore);
 			if (program.getBlackjack().getPlayerTotal() == 21) {
 				program.switchToVictory();
 				return;
@@ -95,14 +97,14 @@ public class GameScreen extends GraphicsPane {
 				program.switchToDefeat();
 				return;
 			}
-			program.getBlackjack().dealCompCard();
-			if (program.getBlackjack().compWon()) {
+			/* if (program.getBlackjack().compWon()) {
 			//	updateLabel(program.getBlackjack().getCompTotal(), compScore);
 			}
 			else {
 				program.switchToVictory();
 				return;
 			}
+			*/
 		}
 		
 		if(obj == standButton) {
